@@ -1,5 +1,5 @@
 import unittest
-from app import bmi_calc  # Ensure this import matches your Flask app's file name
+from app import bmi_calc
 
 class TestBMICalculator(unittest.TestCase):
 
@@ -8,7 +8,7 @@ class TestBMICalculator(unittest.TestCase):
         self.assertEqual(bmi_calc(5, 10, 130), ("Underweight", 18.5))
         self.assertEqual(bmi_calc(5, 10, 150), ("Underweight", 18.5))
         # Normal tests
-        self.assertEqual(bmi_calc(5, 10, 151), ("Normal", 21.6))  # Adjust expected BMI values accordingly
+        self.assertEqual(bmi_calc(5, 10, 151), ("Normal", 21.6))
         self.assertEqual(bmi_calc(5, 10, 160), ("Normal", 23.0))
         self.assertEqual(bmi_calc(5, 10, 190), ("Normal", 27.3))
         # Overweight tests

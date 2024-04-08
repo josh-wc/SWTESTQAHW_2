@@ -1,20 +1,7 @@
-import pytest
-from main import bmi_calc, weight_input, height_feet_input, height_inches_input
+import unittest
+from app import bmi_calc, weight_input, height_feet_input, height_inches_input
 from unittest import mock
 
-@pytest.fixture
-def mock_input(monkeypatch):
-    input_values = []
-
-    def mock_input_func(prompt):
-        print(prompt, end='')
-        value = input_values.pop(0)
-        print(value)
-        return value
-
-    monkeypatch.setattr('builtins.input', mock_input_func)
-
-    return input_values
 
 def test_height_feet_input(mock_input):
     mock_input.extend(['1', '2', '6', '8', '10'])
